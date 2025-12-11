@@ -1,7 +1,7 @@
 const express  = require('express');
 const { resolve } = require('path');
 const app = express();
-const port = 3000;
+
 //const path = resolve(__dirname, 'public');
 app.use(express.static('static'));
 
@@ -25,6 +25,6 @@ app.get('/ArcadeHUB', (req, res) => {
 app.get('/badge.css', (req, res) => {
   res.sendFile(resolve(__dirname, 'static/badge.css'));
 });
-app.listen(port, () => {
-  console.log(`http://localhost:${port}`);
+app.get('/style.css', (req, res) => {
+  res.sendFile(resolve(__dirname, 'static/style.css'));
 });
